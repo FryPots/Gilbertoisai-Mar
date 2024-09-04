@@ -34,8 +34,8 @@ def turn():
 1- Rock     🗿
 2- Paper    📝
 3- Scissors ✂️""")
-    print (com)
-    return valid("Option")
+#    print (com)
+    return valid("\nOption")
             
 ## COM turns
 def cpu():
@@ -96,7 +96,7 @@ while True:
 #    print(atk)
     
 
-    if atk != "quit":
+    if str(atk).casefold != "quit":
         
         if atk != False: 
              
