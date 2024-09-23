@@ -1,6 +1,8 @@
 import random as rand
 import math
 
+import time
+
 ##Now i know why people use comments
 
 ## Resets the game variables
@@ -10,6 +12,7 @@ computer = 0
 atk = ""
 com = 0
 rounds = 0
+
 
 def inRange(n, m, M):
     if (m <= int(n) < M):
@@ -33,13 +36,19 @@ def valid(msg):
         else:
             return(False)
 
+def star(message):
+    a = "*" * 10
+    b = "*" * 5
+    return(f"{a}{message} {b}")
 ## Asks for the player input
 def turn():
     global com
-    print("""Choose your weapon:
+    print(star(color("""
+Choose your weapon:
 1- Rock     🗿
 2- Paper    📝
-3- Scissors ✂️""")
+3- Scissors ✂️
+""", "")))
 #    print (com)
     return valid("\nOption")
 
@@ -65,19 +74,31 @@ def game():
     atk = turn()
 ## Increases the Score by 1
 
+def color(text, color):
+    if color == "red":
+        out = u"\u001b[31m"
+    if color == "green":
+        out = u"\u001b[32m"
+    if color == "yellow":
+        out = u"\u001b[33m"
+    if color == "":
+        out = u"\u001b[0m"
+    return out + text + u"\u001b[0m"
+
 def victory(tag):
     global player
     global computer
     if tag == "player":
-        spaced(f"PLAYER WON USING {icon(atk)} AGAINST {icon(com)}")
+        spaced(star(color(f"PLAYER WON USING {icon(atk)} AGAINST {icon(com)}", "green")))
         player += 1
     if tag == "cpu":
-        spaced(f"COM WON USING {icon(com)} AGAINST {icon(atk)}")
+        spaced(star(color(f"COM WON USING {icon(com)} AGAINST {icon(atk)}", "red")))
         computer += 1
     if tag == "draw":
-        spaced(f"DRAW BOTH USED {icon(com)}")
+        spaced(star(color(f"DRAW BOTH USED {icon(com)}", "yellow")))
         player   += 1
         computer += 1
+    time.sleep(0.75)
     game()
 
 ## Icon converter

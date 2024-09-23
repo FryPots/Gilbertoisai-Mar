@@ -43,12 +43,12 @@ def star(message):
 ## Asks for the player input
 def turn():
     global com
-    print(star(color("""
+    print(color(star("""
 Choose your weapon:
 1- Rock     🗿
 2- Paper    📝
 3- Scissors ✂️
-""", "")))
+"""), ""))
 #    print (com)
     return valid("\nOption")
 
@@ -89,13 +89,13 @@ def victory(tag):
     global player
     global computer
     if tag == "player":
-        spaced(star(color(f"PLAYER WON USING {icon(atk)} AGAINST {icon(com)}", "green")))
+        spaced(color(star(f"PLAYER WON USING {icon(atk)} AGAINST {icon(com)}"), "green"))
         player += 1
     if tag == "cpu":
-        spaced(star(color(f"COM WON USING {icon(com)} AGAINST {icon(atk)}", "red")))
+        spaced(color(star(f"COM WON USING {icon(com)} AGAINST {icon(atk)}"), "red"))
         computer += 1
     if tag == "draw":
-        spaced(star(color(f"DRAW BOTH USED {icon(com)}", "yellow")))
+        spaced(color(star(f"DRAW BOTH USED {icon(com)}"), "yellow"))
         player   += 1
         computer += 1
     time.sleep(0.75)
@@ -104,20 +104,14 @@ def victory(tag):
 ## Icon converter
 def icon(num):
     if num == 3:
-        return("✂️")
+        return("✂️ ")
     if num == 2:
         return("📝")
     if num == 1:
         return("🗿")
-
-
-
-
-
-
-
-
-
+    
+    
+    
 
 game()
 while True:
