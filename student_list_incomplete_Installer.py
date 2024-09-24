@@ -1,5 +1,5 @@
 
-code = (r'''# Initial list of students
+code = r'''# Initial list of students
 #TODO: Create a List of Students names. Add 10 names. Name this list as 'student'
 def listify(text, c):
     out = ""
