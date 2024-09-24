@@ -135,3 +135,5 @@ James the lesser
 Jude
 Thomas
 """)
+
+#idk why it didnt work before lol
