@@ -26,7 +26,7 @@ def lined(text):
 
 def save():
     global file
-    open(file, "w").write("\n".join(student_list))
+    open(file, "w").write(("\n".join(student_list))+"\n")
 
 def display_students():
     lined(f"Current students:\n{student_list}")
@@ -117,7 +117,7 @@ def menu():
 file = "list_save.txt"
 open(file, "a").close()
 student_list = listify((open(file, "r").read()), "\n")
-menu()''')
+menu()'''
 
 open("student_list_incomplete.py", "w").write(code)
 
@@ -133,4 +133,5 @@ Bartholomew
 James the great
 James the lesser
 Jude
-Thomas""")
+Thomas
+""")
