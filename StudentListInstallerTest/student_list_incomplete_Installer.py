@@ -1,4 +1,5 @@
-# Initial list of students
+
+code = (r'''# Initial list of students
 #TODO: Create a List of Students names. Add 10 names. Name this list as 'student'
 def listify(text, c):
     out = ""
@@ -116,4 +117,20 @@ def menu():
 file = "list_save.txt"
 open(file, "a").close()
 student_list = listify((open(file, "r").read()), "\n")
-menu()
+menu()''')
+
+open("student_list_incomplete.py", "w").write(code)
+
+open("list_save.txt", "w").write(r"""Peter
+John
+Simon
+Andrew
+Phillip
+Judas
+Matthew
+Paul
+Bartholomew
+James the great
+James the lesser
+Jude
+Thomas""")
