@@ -1,0 +1,13 @@
+
+width of tire:            245.0
+aspect ratio of tire:     70.0
+diameter of the wheel:    19.5
+volume of the tire:       880.19
+2024-09-24 22:59:59.782456
+
+width of tire:            245.0
+aspect ratio of tire:     45.0
+diameter of the wheel:    17.0
+volume of the tire:       459.97
+Phone: 1234567890
+2024-09-24 23:00:11.667457
