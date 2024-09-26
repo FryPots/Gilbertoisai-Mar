@@ -6,9 +6,7 @@ player_y = 3
 player_coords = [player_x, player_y]
 player_inv = []
 
-
-
-levels = []
+levels = [[[0,0],["🌳🌳🌳🟩🌳🌳🌳","🌳🟩🟩🟩🟩🟩🌳","🌳🟩🪧🟩🟩🟩🟩","🌳🟩🟩🟩🟩🟩🌳","🌳🟩🟩🟩🟩🟩🌳🌳🌳🌳🌳🌳","🌳🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩","🌳🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩","🌳🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩","🌳🌳🌳🟩🌳🌳🌳🌳🌳🌳🌳🌳"]]]
 
 def clear_terminal():
     os.system("cls")
@@ -16,7 +14,8 @@ def clear_terminal():
 def drawlevel(n):
     clear_terminal()
     global scene, highline, midline, lowline
-    scene = levels[n]
+    level_info = levels[n]
+    scene = level_info[1]
     tile_y = len(scene) - 1
     for y in scene:
         row = ""
@@ -34,11 +33,12 @@ def drawlevel(n):
             tile_x += 1
         print(row)
         tile_y -= 1
-    print(player_coords)
+    print("Player coordinates: ",player_coords, "\n")
+    #print(highline) print(midline) print(lowline)
 
 def inbounds(key):
-    max_x = len(level[player_y])-1
-    max_y = (len(level)-1)
+    max_x = len(midline) - 1
+    max_y = (len(scene)-1)
     if player_x == 0:
         if key == "a":
             return False
