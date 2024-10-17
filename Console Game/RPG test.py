@@ -45,6 +45,7 @@ def player_tick():
             
     
 def draw_scene():
+    clear()
     out = reset
     for index in range(len(level)):
         tile_idx = int(level[index])
@@ -55,7 +56,6 @@ def draw_scene():
             out += f"{tileset[tile_idx]}{reset}"
             continue
         out += " i"
-    clear()
     print(out)
 
 level = make_scene()
@@ -63,4 +63,3 @@ level = make_scene()
 while True:    
     draw_scene()
     player_tick()
-    print(player_pos)
