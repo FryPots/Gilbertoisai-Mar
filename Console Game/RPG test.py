@@ -55,17 +55,13 @@ def player_tick():
             
     
 def draw_scene():
-    clear()
     out = reset
+    clear()
     for group in level:
         tile = group[0]
         times = group[1]
-        for i in range(times):
-            if (i + 1) % (GRID_SIZE + 1) == 0:
-                out += "\n"
-            else:
-                out += tileset[tile]
-    print(out)
+        for tile_idx in range(times):
+            out += tileset[tile]
         
 level = make_scene()
 
