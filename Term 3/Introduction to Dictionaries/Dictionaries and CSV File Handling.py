@@ -1,29 +1,33 @@
-file = open("clients.csv", "a")
-file.close()
+import csv
 
-file = open("clients.csv", "r").read()
+def load_contacts(filename):
+    contacts = {}
+    with open(filename, mode= "r", newline="") as file:
+        reader = csv.reader(file)
+        for row in reader:
+            first_name = row[0]
+            last_name  = row[1]
+            phone_num  = row[2]
+            email      = row[3]
+            contacts[last_name] = [first_name, phone_num, email]
+    return contacts
 
-clients : dict = {
-    "FirstName"     :   "John",
-    "LastName"      :   "Doe",
-    "PhoneNumber"   :   "123-456-7890",
-    "EmailAddress"  :   "Example@Example.com",
-}
+def display_contact_info(contact_info):
+    if contact_info:
+        print("\nContact Info: ")
+        print(f"first_name:   {contact_info[0]}")
+        print(f"phone number: {contact_info[1]}")
+        print(f"email:        {contact_info[2]}")
+    else:
+        print(f"Error Match for {contact_info} not Found")
 
-def import_csv(csv):
-    tmp = ""
-    out = []
-    for c in csv:
-        match c:
-            case ",":
-                out.append(tmp)
-                tmp = ""
-            case _:
-                tmp += c
-    return out
-
-client_csv = import_csv(file)
-
-for i in range( 0, len(client_csv), len(clients)):
-    print(i)
-print(len(client_csv))
+def main():
+    filename = "clients.csv"
+    
+    contacts = load_contacts(filename)
+    
+    last_name = input("please enter a last name to look up: ").strip()
+    contact_info = contacts.get(last_name)
+    display_contact_info(contact_info)
+    
+main()
