@@ -18,6 +18,7 @@ def display_contact_info(contact_info):
         print(f"First Name :    {contact_info[0]}")
         print(f"Phone Number :  {contact_info[1]}")
         print(f"Email :         {contact_info[2]}")
+        print()
     else:
         print("No contact information found")
 
@@ -28,6 +29,7 @@ def main ():
     last_name = input("Please insert a last name:").strip()
     contact_info = contacts.get(last_name)
     display_contact_info(contact_info)
+    main()
 
-
-main()
+if __name__ == "__main__":
+    main()
