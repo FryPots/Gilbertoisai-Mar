@@ -1,0 +1,23 @@
+{
+    "01": [
+        {
+            "name": "Alice Johnson",
+            "grade": "A",
+            "group": "A"
+        }
+    ],
+    "02": [
+        {
+            "name": "Bob Smith",
+            "grade": "B",
+            "group": "A"
+        }
+    ],
+    "03": [
+        {
+            "name": "Charlie Brown",
+            "grade": "C",
+            "group": "A"
+        }
+    ]
+}
