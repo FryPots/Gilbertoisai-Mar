@@ -3,21 +3,24 @@
         {
             "name": "Alice Johnson",
             "grade": "A",
-            "group": "A"
+            "group": "A",
+            "Race": "white"
         }
     ],
     "02": [
         {
             "name": "Bob Smith",
             "grade": "B",
-            "group": "A"
+            "group": "A",
+            "Race": "Black"
         }
     ],
     "03": [
         {
             "name": "Charlie Brown",
             "grade": "C",
-            "group": "A"
+            "group": "A",
+            "Race": "Latin"
         }
     ]
 }
