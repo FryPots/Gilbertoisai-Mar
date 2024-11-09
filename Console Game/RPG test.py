@@ -13,3 +13,8 @@ player: dict = {
     "editor":     False
     }
 
+level: dict = {}
+
+GRID_SIZE = 15
+
+def create_scene(GRID_SIZE):

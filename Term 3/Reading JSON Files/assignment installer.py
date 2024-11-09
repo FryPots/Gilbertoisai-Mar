@@ -1,4 +1,4 @@
-import json
+main_program: str = r'''import json
 
 import json.scanner
 
@@ -37,4 +37,40 @@ def main():
     main()
 
 if __name__ == "__main__":
-    main()
+    main()'''
+
+json_file: str = r'''
+{
+    "01": [
+        {
+            "name": "Alice Johnson",
+            "grade": "A",
+            "group": "A",
+            "Race": "white"
+        }
+    ],
+    "02": [
+        {
+            "name": "Bob Smith",
+            "grade": "B",
+            "group": "A",
+            "Race": "Black"
+        }
+    ],
+    "03": [
+        {
+            "name": "Charlie Brown",
+            "grade": "C",
+            "group": "A",
+            "Race": "Latin"
+        }
+    ]
+}'''
+
+file = open(file="json_assignment.py", mode="w", newline="")
+file.write(main_program)
+file.close()
+
+file = open(file="data.json", mode="w", newline="")
+file.write(json_file)
+file.close()
