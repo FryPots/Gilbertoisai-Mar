@@ -1,7 +1,5 @@
 import json
 
-import json.scanner
-
 def read_json(file_name):
     with open(file=file_name, mode="r", newline="") as json_file:
         data = json.load(json_file)
