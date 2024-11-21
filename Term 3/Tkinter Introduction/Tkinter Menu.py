@@ -2,15 +2,7 @@ from tkinter import *
 
 window = Tk()
 window.title("Hello World!")
-window.geometry("400x400")
-
-menubar = Menu(window)
-window.config(menu=menubar)
-
-file_menu = Menu(menubar, tearoff=0)
-menubar.add_cascade(label="File", menu=file_menu)
-file_menu.add_command(label="New Window")
-file_menu.add_command(label="New Window with Profile")
+window.geometry("400x400") #(400,400)
 
 menus: dict = {
     "File": ["New Text File",
@@ -71,5 +63,6 @@ def menu_setup(root: object = ..., menus: dict = ...):
                     menu.add_separator()
                 case _:
                     menu.add_command(label=options)
+                    
 menu_setup(root=window,menus=menus)
 window.mainloop()
