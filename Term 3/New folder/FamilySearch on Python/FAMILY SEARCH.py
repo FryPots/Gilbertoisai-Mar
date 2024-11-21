@@ -153,9 +153,9 @@ def print_marriages(marriages_dict: dict, people_dict: dict) -> None:
     for marriage_key in marriages_dict:
         marriage = marriages_dict[marriage_key]
         
-        husband = [marriage][HUSBAND_KEY_INDEX]
-        wife = [marriage][WIFE_KEY_INDEX]
-        m_date = [marriage][WEDDING_YEAR_INDEX]
+        husband = marriage[HUSBAND_KEY_INDEX]
+        wife = marriage[WIFE_KEY_INDEX]
+        m_date = marriage[WEDDING_YEAR_INDEX]
         
         husband = people_dict[husband]
         wife = people_dict[wife]
