@@ -49,7 +49,8 @@ menus: dict = {
              None,
              "Toggle Line Comment",
              "Toggle Block Comment",
-             "Emmet: Expand Abbreviation"]}
+             "Emmet: Expand Abbreviation"]
+    }
 
 def menu_setup(root: object = ..., menus: dict = ...):
     menubar = Menu(root)
@@ -63,6 +64,6 @@ def menu_setup(root: object = ..., menus: dict = ...):
                     menu.add_separator()
                 case _:
                     menu.add_command(label=options)
-                    
+
 menu_setup(root=window,menus=menus)
 window.mainloop()
